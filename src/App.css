@@ -27,6 +27,11 @@
 .App-link {
   color: #61dafb;
 }
+.input_class{ 
+  width:10px;
+  align-items: center;
+  background-color:#dddd;
+}
 
 @keyframes App-logo-spin {
   from {
@@ -36,3 +41,4 @@
     transform: rotate(360deg);
   }
 }
+

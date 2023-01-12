@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { useSelector,useDispatch } from 'react-redux';
+import {incrementAction,decrementAction,multipicationAction,divideAction} from './actions/Action.js'
 
 function App() {
+  const mystate = useSelector((state)=>state.reducerFunction)
+    console.log(mystate);
+  const dispatch = useDispatch()
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+          <h4>{mystate}</h4>
+           React/Redux
+           <br/>
+           <button type="button"onClick={()=>{dispatch(decrementAction)}}>-</button>
+           <button type="button"onClick={()=>{dispatch(multipicationAction)}}>*</button>
+           <input  type="text" className="input_class" value={mystate}/>
+           <button type="button" onClick={()=>{dispatch(incrementAction)}}>+</button>
+           <button type="button" onClick={()=>{dispatch(divideAction)}}>/</button>
     </div>
+    
   );
 }
 
